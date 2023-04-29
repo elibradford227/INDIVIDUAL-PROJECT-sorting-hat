@@ -77,9 +77,51 @@ const cardsOnDom = (array) => {
      </div>
      `
   }
-
-
   renderToDom('#students', domString)
 }
 
-cardsOnDom(hogwarts);
+const filter = (array, house) => {
+  const houseArray = [];
+  for (const student of array) {
+    if (student.house === house) {
+      houseArray.push(student);
+    }
+  }
+  return houseArray
+}
+
+const allBtn = document.querySelector("#all")
+const gryffindorBtn = document.querySelector('#gryffindor')
+const slytherinBtn = document.querySelector('#slytherin')
+const ravenclawBtn = document.querySelector('#ravenclaw')
+const hufflepuffBtn = document.querySelector('#hufflepuff')
+
+allBtn.addEventListener('click', () => {
+  cardsOnDom(hogwarts)
+})
+
+gryffindorBtn.addEventListener('click', () => {
+  const gryf = filter(hogwarts, 'Gryffindor');
+  cardsOnDom(gryf)
+})
+
+slytherinBtn.addEventListener('click', () => {
+  const slyth = filter(hogwarts, 'Slytherin');
+  cardsOnDom(slyth)
+})
+
+ravenclawBtn.addEventListener('click', () => {
+  const raven = filter(hogwarts, 'Ravenclaw');
+  cardsOnDom(raven)
+})
+
+hufflepuffBtn.addEventListener('click', () => {
+  const huff = filter(hogwarts, 'Hufflepuff');
+  cardsOnDom(huff)
+})
+
+const startApp = () => {
+  cardsOnDom(hogwarts)
+}
+
+startApp();
