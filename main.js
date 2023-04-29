@@ -120,6 +120,36 @@ hufflepuffBtn.addEventListener('click', () => {
   cardsOnDom(huff)
 })
 
+const form = document.querySelector('form');
+
+const newStudent = (e) => {
+  e.preventDefault();
+  function randNumber() {
+    let num = Math.floor(Math.random() * (5 - 1) + 1);
+    if (num === 1) {
+      return 'Gryffindor'
+    } else if (num === 2) {
+      return 'Slytherin'
+    } else if (num === 3) {
+      return 'Ravenclaw'
+    } else  {
+      return 'Hufflepuff'
+    }
+  }
+
+  const newStudentObj = {
+    id: hogwarts.length + 1,
+    name: document.querySelector('#studentName').value,
+    house: `${randNumber()}`,
+    color: 'yellow'
+  }
+  hogwarts.push(newStudentObj)
+  cardsOnDom(hogwarts)
+  form.reset();
+}
+
+form.addEventListener('submit', newStudent)
+
 const startApp = () => {
   cardsOnDom(hogwarts)
 }
