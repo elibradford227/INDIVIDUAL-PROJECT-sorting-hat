@@ -99,6 +99,7 @@ const gryffindorBtn = document.querySelector('#gryffindor')
 const slytherinBtn = document.querySelector('#slytherin')
 const ravenclawBtn = document.querySelector('#ravenclaw')
 const hufflepuffBtn = document.querySelector('#hufflepuff')
+const addBtn = document.querySelector('#add')
 
 allBtn.addEventListener('click', () => {
   cardsOnDom('#students', hogwarts)
@@ -123,6 +124,8 @@ hufflepuffBtn.addEventListener('click', () => {
   const huff = filter(hogwarts, 'Hufflepuff');
   cardsOnDom('#students', huff)
 })
+
+
 
 const form = document.querySelector('form');
 
@@ -153,6 +156,8 @@ const newStudent = (e) => {
 }
 
 form.addEventListener('submit', newStudent)
+
+
 
 let expel = []
 

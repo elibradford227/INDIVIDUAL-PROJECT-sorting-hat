@@ -18,10 +18,11 @@ h1, h4 {
 
 header {
   font-weight: 600;
+  font-size: larger;
   display: flex;
   margin-top: 20px;
-
   justify-content: center;
+ 
 }
 
 #stu {
