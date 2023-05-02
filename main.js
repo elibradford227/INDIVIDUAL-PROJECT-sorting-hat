@@ -64,6 +64,7 @@ const renderToDom = (divId, html) => {
 
 const cardsOnDom = (divId, array) => {
   let domString = '';
+
   for (const student of array) {
     domString += 
     `<div class="col">
@@ -76,6 +77,9 @@ const cardsOnDom = (divId, array) => {
       </div>
      </div>
      `
+
+
+  
   }
   renderToDom(divId, domString)
 }
