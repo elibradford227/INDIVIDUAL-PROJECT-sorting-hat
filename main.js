@@ -55,14 +55,14 @@ const hogwarts = [
   }
 ];
 
-const app = document.querySelector('#app')
+const app = document.querySelector('#students')
 
 const renderToDom = (divId, html) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = html;
 }
 
-const cardsOnDom = (array) => {
+const cardsOnDom = (divId, array) => {
   let domString = '';
   for (const student of array) {
     domString += 
@@ -71,13 +71,13 @@ const cardsOnDom = (array) => {
         <div class="card-body">
           <h5 class="card-title">${student.name}</h5>
           <p>${student.house}</p>
-          <a href="#" class="btn btn-danger">Expel</a>
+          <a href="#" class="btn btn-danger" id="delete--${student.id}">Expel</a>
         </div>
       </div>
      </div>
      `
   }
-  renderToDom('#students', domString)
+  renderToDom(divId, domString)
 }
 
 const filter = (array, house) => {
@@ -97,27 +97,27 @@ const ravenclawBtn = document.querySelector('#ravenclaw')
 const hufflepuffBtn = document.querySelector('#hufflepuff')
 
 allBtn.addEventListener('click', () => {
-  cardsOnDom(hogwarts)
+  cardsOnDom('#students', hogwarts)
 })
 
 gryffindorBtn.addEventListener('click', () => {
   const gryf = filter(hogwarts, 'Gryffindor');
-  cardsOnDom(gryf)
+  cardsOnDom('#students', gryf)
 })
 
 slytherinBtn.addEventListener('click', () => {
   const slyth = filter(hogwarts, 'Slytherin');
-  cardsOnDom(slyth)
+  cardsOnDom('#students', slyth)
 })
 
 ravenclawBtn.addEventListener('click', () => {
   const raven = filter(hogwarts, 'Ravenclaw');
-  cardsOnDom(raven)
+  cardsOnDom('#students', raven)
 })
 
 hufflepuffBtn.addEventListener('click', () => {
   const huff = filter(hogwarts, 'Hufflepuff');
-  cardsOnDom(huff)
+  cardsOnDom('#students', huff)
 })
 
 const form = document.querySelector('form');
@@ -144,14 +144,28 @@ const newStudent = (e) => {
     color: 'yellow'
   }
   hogwarts.push(newStudentObj)
-  cardsOnDom(hogwarts)
+  cardsOnDom('#students', hogwarts)
   form.reset();
 }
 
 form.addEventListener('submit', newStudent)
 
+let expel = []
+
+app.addEventListener('click', (e => {
+  const [, id] = e.target.id.split('--');
+  if(e.target.id.includes("delete")) {
+    const index = hogwarts.findIndex(e => e.id === Number(id));
+    let expelledStudent = hogwarts.splice(index, 1);
+    expel.push(...expelledStudent)
+    cardsOnDom('#expel', expel)
+    cardsOnDom('#students', hogwarts)
+  }
+}))
+
 const startApp = () => {
-  cardsOnDom(hogwarts)
+  cardsOnDom('#students', hogwarts)
+  cardsOnDom('#expel', expel)
 }
 
 startApp();
