@@ -3,9 +3,24 @@ body {
   width: 80%;
 }
 
+.wrapper {
+  width: 50%;
+  display: inline-block;
 
+}
 
 #students {
  margin-top: 20px;
+
+
+}
+
+#expel {
+  margin-top: 20px;
   width: 50%;
+  left: 50%;
+  top: 10.15rem;
+  position: absolute;
+  margin-left: 20px;
+ 
 }
