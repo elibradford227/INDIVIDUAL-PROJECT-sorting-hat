@@ -86,9 +86,9 @@ const cardsOnDomExpel = (divId, array) => {
     domString += 
     `<div class="col">
       <div class="card" style="width: 15rem;">
-        <div class="card-body" id="${student.house}">
+        <div class="card-body" id="evil">
           <h5 class="card-title">${student.name}</h5>
-          <p>${student.house}</p>
+          <p>Deatheater</p>
         </div>
       </div>
      </div>
