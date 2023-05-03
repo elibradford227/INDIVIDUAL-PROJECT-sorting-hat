@@ -11,9 +11,16 @@ h1, h4 {
     margin-top: 20px;
 }
 
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 .wrapper {
   display: flex;
   margin-top: 10px;
+  
 }
 
 header {
@@ -22,7 +29,7 @@ header {
   display: flex;
   margin-top: 20px;
   justify-content: center;
- 
+  
 }
 
 #stu {
@@ -31,6 +38,7 @@ header {
 
 #students {
   flex-basis: 50%;
+
 }
 .buttons {
   display: flex;
@@ -40,15 +48,42 @@ header {
   padding: 10px;
   margin-top: 20px;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
  #expel {
-
   flex-basis: 50%;
-
   margin-left: 20px;
- 
 } 
-/* 
-.expelwrapper {
-  
-} */
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --bs-card-bg: none;
+  --bs-card-border-radius: 10px;
+  --bs-card-border-color: none;
+}
+
+#Gryffindor {
+  background-color: #ae0001;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+#Slytherin {
+  background-color: #198754;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#Ravenclaw {
+  background-color: #0d6efd;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#Hufflepuff {
+  background-color: #ffc107;
+  padding: 10px;
+  border-radius: 10px;
+}
