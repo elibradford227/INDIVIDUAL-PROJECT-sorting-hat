@@ -63,8 +63,7 @@ const renderToDom = (divId, html) => {
 }
 
 const cardsOnDom = (divId, array) => {
-  let domString = '';
-
+  let domString = ''
   for (const student of array) {
     domString += 
     `<div class="col">
@@ -76,10 +75,24 @@ const cardsOnDom = (divId, array) => {
         </div>
       </div>
      </div>
-     `
+     `  
+  }
+  renderToDom(divId, domString)
+}
 
-
-  
+const cardsOnDomExpel = (divId, array) => {
+  let domString = '';
+  for (const student of array) {
+    domString += 
+    `<div class="col">
+      <div class="card" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">${student.name}</h5>
+          <p>${student.house}</p>
+        </div>
+      </div>
+     </div>
+     `  
   }
   renderToDom(divId, domString)
 }
@@ -157,8 +170,6 @@ const newStudent = (e) => {
 
 form.addEventListener('submit', newStudent)
 
-
-
 let expel = []
 
 app.addEventListener('click', (e => {
@@ -167,7 +178,7 @@ app.addEventListener('click', (e => {
     const index = hogwarts.findIndex(e => e.id === Number(id));
     let expelledStudent = hogwarts.splice(index, 1);
     expel.push(...expelledStudent)
-    cardsOnDom('#expel', expel)
+    cardsOnDomExpel('#expel', expel)
     cardsOnDom('#students', hogwarts)
   }
 }))
