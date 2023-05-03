@@ -20,7 +20,6 @@ h1, h4 {
 .wrapper {
   display: flex;
   margin-top: 10px;
-  
 }
 
 header {
@@ -29,7 +28,6 @@ header {
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  
 }
 
 #stu {
@@ -86,4 +84,11 @@ header {
   background-color: #ffc107;
   padding: 10px;
   border-radius: 10px;
+}
+
+#evil {
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
 }
