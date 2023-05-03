@@ -68,7 +68,7 @@ const cardsOnDom = (divId, array) => {
     domString += 
     `<div class="col">
       <div class="card" style="width: 15rem;">
-        <div class="card-body">
+        <div class="card-body" id="${student.house}">
           <h5 class="card-title">${student.name}</h5>
           <p>${student.house}</p>
           <a href="#" class="btn btn-danger" id="delete--${student.id}">Expel</a>
@@ -86,7 +86,7 @@ const cardsOnDomExpel = (divId, array) => {
     domString += 
     `<div class="col">
       <div class="card" style="width: 15rem;">
-        <div class="card-body">
+        <div class="card-body" id="${student.house}">
           <h5 class="card-title">${student.name}</h5>
           <p>${student.house}</p>
         </div>
